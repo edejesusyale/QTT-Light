@@ -34,9 +34,8 @@
     <% end %>
 
 
-    <%doc_counter = 0%>
+    <%doc_counter = 1%>
     <% if (defined? @documents) && @solr_query != '' && @documents != nil && @solr_documents != :query_failed %>
-      <%doc_counter += 1%>
       <% if @oid_id_search %>
         <% if @missing_pids != [] || @missing_oids != [] %>
           <h2>Not Found:</h2>
@@ -51,7 +50,8 @@
         <% end %>
       <%end%>
 
-      <% color = doc_counter % 2 == 0? "bgcolor=#FFFFF" : ""%>
+
+      <h2>Results:</h2>
       <table class="table table-striped">
         <thead>
         <tr>
@@ -66,6 +66,8 @@
         </thead>
         <tbody>
         <% @documents.each { |document | %>
+          <%doc_counter += 1 %>
+          <% color = doc_counter % 2 == 1? "white" : "grey"%>
             <%ocidoc = document[1]%>
             <%document = document[0]%>
           <tr class="<% if !document.will_display_in_production? %>no-production<% end %> <% if !document.will_display_in_test? %>no-test<% end %>">
@@ -74,7 +76,7 @@
             </td>
 
             <td class="document-valid">
-              <table class="table table-striped under" <%=color%>>
+              <table class="table table-striped under  <%=color%>">
                 <thead>
                 <tr>
                   <th scope="col">SOLR</th>
@@ -88,7 +90,7 @@
               </table>
 
             <td class="document-valid">
-              <table class="table table-striped under" <%=color%>>
+              <table class="table table-striped under <%=color%>">
                 <thead>
                 <tr>
                   <th scope="col">SOLR</th>
@@ -103,7 +105,7 @@
 
 
             <td class="document-valid">
-              <table class="table table-striped under" <%=color%>>
+              <table class="table table-striped under <%=color%>">
                 <thead>
                 <tr>
                   <th scope="col">SOLR</th>
@@ -117,7 +119,7 @@
               </table>
 
             <td class="document-valid">
-              <table class="table table-striped under" <%=color%>>
+              <table class="table table-striped under <%=color%>">
                 <thead>
                 <tr>
                   <th scope="col">SOLR</th>
@@ -132,7 +134,7 @@
 
 
             <td class="document-valid">
-              <table class="table table-striped under" <%=color%>>
+              <table class="table table-striped under <%=color%>">
                 <thead>
                 <tr>
                   <th scope="col">SOLR</th>
