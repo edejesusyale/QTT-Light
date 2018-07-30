@@ -34,7 +34,9 @@
     <% end %>
 
 
+    <%doc_counter = 0%>
     <% if (defined? @documents) && @solr_query != '' && @documents != nil && @solr_documents != :query_failed %>
+      <%doc_counter += 1%>
       <% if @oid_id_search %>
         <% if @missing_pids != [] || @missing_oids != [] %>
           <h2>Not Found:</h2>
@@ -49,7 +51,7 @@
         <% end %>
       <%end%>
 
-      <h2>Results:</h2>
+      <% color = doc_counter % 2 == 0? "bgcolor=#FFFFF" : ""%>
       <table class="table table-striped">
         <thead>
         <tr>
@@ -70,22 +72,79 @@
             <td class="document-valid" >
               <%= document[:clio_id_display].to_s.tr('""[]','') %><br />
             </td>
-            <td class="document<%if ocidoc[:title_display].to_s.tr('[]/','').include? document[:title_display].to_s.tr('""[]','') %>-valid<% else %>-invalid<% end %>">
-              <%= document[:title_display].to_s.tr('""[]','')%>
-              <%= ocidoc[:title_display].to_s.tr('[]/','') %>
-            </td>
-            <td class="document<%if ocidoc[:author_display].to_s.tr('[]/""','').include? document[:author_display].to_s.tr('""[]','') %>-valid<% else %>-invalid<% end %>" >
-              <%= document[:author_display].to_s.tr('""[]','') %>
-            </td>
-            <td class="document<%if ocidoc[:isbn_display].to_s.tr('[]/""','').include? document[:isbn_display].to_s.tr('""[]','') %>-valid<% else %>-invalid<% end %>" >
-              <%= document[:isbn_display].to_s.tr('""[]','') %>
-            </td>
-            <td class="document<%if ocidoc[:full_publisher_display].to_s.tr('[]/""','').include? document[:full_publisher_display].to_s.tr('""[]','') %>-valid<% else %>-invalid<% end %>" >
-              <%=document[:full_publisher_display].to_s.tr('""[]','') %>
-            </td>
-            <td class="document<%if true%>-valid<% else %>-invalid<% end %>" >
-              <%= document[:location_call_number_id_display].to_s.tr('""[]','') %>
-            </td>
+
+            <td class="document-valid">
+              <table class="table table-striped under" <%=color%>>
+                <thead>
+                <tr>
+                  <th scope="col">SOLR</th>
+                  <th scope="col">ORACLE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <td><%= document[:title_display].to_s.tr('[]""','')%></td>
+                <td><%= ocidoc[:title_display].force_encoding('utf-8').encode unless ocidoc[:title_display].nil?%></td>
+                </tbody>
+              </table>
+
+            <td class="document-valid">
+              <table class="table table-striped under" <%=color%>>
+                <thead>
+                <tr>
+                  <th scope="col">SOLR</th>
+                  <th scope="col">ORACLE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <td><%= document[:author_display].to_s.tr('[]""','')%></td>
+                <td><%= ocidoc[:author_display].force_encoding('utf-8').encode unless ocidoc[:author_display].nil?%></td>
+                </tbody>
+              </table>
+
+
+            <td class="document-valid">
+              <table class="table table-striped under" <%=color%>>
+                <thead>
+                <tr>
+                  <th scope="col">SOLR</th>
+                  <th scope="col">ORACLE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <td><%= document[:isbn_display].to_s.tr('[]""','')%></td>
+                <td><%= ocidoc[:isbn_display].force_encoding('utf-8').encode unless ocidoc[:isbn_display].nil?%></td>
+                </tbody>
+              </table>
+
+            <td class="document-valid">
+              <table class="table table-striped under" <%=color%>>
+                <thead>
+                <tr>
+                  <th scope="col">SOLR</th>
+                  <th scope="col">ORACLE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <td><%= document[:full_publisher_display].to_s.tr('[]""','')%></td>
+                <td><%= ocidoc[:full_publisher_display].force_encoding('utf-8').encode unless ocidoc[:full_publisher_display].nil?%></td>
+                </tbody>
+              </table>
+
+
+            <td class="document-valid">
+              <table class="table table-striped under" <%=color%>>
+                <thead>
+                <tr>
+                  <th scope="col">SOLR</th>
+                  <th scope="col">ORACLE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <td><%= document[:lcation_call_number_id_display].to_s.tr('[]""','')%></td>
+                </tbody>
+              </table>
+
+
             <td>
               <a class = "Findit btn btn-info"  href="http://search.library.yale.edu/catalog/<%=document[:id].to_s%>?counter=1 ">QS</a>
             </td>

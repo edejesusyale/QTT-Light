@@ -9,7 +9,7 @@ class SolrDocument
   delegate :[], :key?, :keys, :to_h, :as_json, :each, :symbolize_keys, to: :_source
 
   def valid_viewopt?
-    AppConfig::Yaml::APP_CONFIG['valid_viewopts'].include? self[:viewopt_ssi]
+    #AppConfig::Yaml::APP_CONFIG['valid_viewopts'].include? self[:viewopt_ssi]
   end
 
   def will_display_in_production?

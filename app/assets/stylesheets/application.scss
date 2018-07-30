@@ -113,6 +113,25 @@ textarea {
   padding-top: 20%;
 }
 
+.under {
+  table {
+    table-layout: fixed;
+  }
+}
+
+.white {
+  table {
+    background-color: white !important;
+    td {
+      background-color: white !important;
+    }
+    th {
+      background-color: white !important;
+    }
+
+  }
+}
+
 
 .search_box {
 
