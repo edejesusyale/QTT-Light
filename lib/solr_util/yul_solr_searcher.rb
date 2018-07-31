@@ -5,7 +5,7 @@ class YulSolrSearcher
   def find_documents( query )
     begin
       solr = RSolr.connect( url: "http://hydratest.library.yale.edu:8083/solr/clio-hydra" )
-      response = solr.post( 'select', params: {q:"#{query}", wt:'ruby', rows: 500, start: 0,defType: 'edismax',qf: "id",op: "OR"} )
+      response = solr.post( 'select', data: {q:"#{query}", wt:'ruby', rows: 500, start: 0,defType: 'edismax',qf: "id",op: "OR"} )
       response = response['response']
       puts("response: " + response.to_s + " || Query: " + query)
       results = []
@@ -26,5 +26,3 @@ class YulSolrSearcher
     @url = url
   end
 end
-
-

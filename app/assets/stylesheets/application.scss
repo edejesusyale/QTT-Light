@@ -21,7 +21,9 @@ body {
 html, body {
   margin: 0; padding: 0; border: 0;
   font-family: "Hiragino Mincho Pro";
-  padding-top: 5%;
+  padding-top: 35px;
+  padding-left: 89px;
+  position: absolute;
 }
 
 .nav-bar
@@ -119,8 +121,9 @@ textarea {
   }
 }
 
-table .white {
-
+.white {
+  table {
+    background-color: white !important;
     td {
       background-color: white !important;
     }
@@ -128,8 +131,30 @@ table .white {
       background-color: white !important;
     }
 
+  }
 }
 
+
+
+/*.table.table-striped.under5 :nth-child(odd) {
+  background-color: red;
+  border: none;
+}
+
+/*.table.table-striped.under :nth-child(odd) {
+  background-color: red;
+  border: none;
+}
+
+.table.table-striped.under :nth-child(even) {
+  background-color: blue;
+  border: none;
+}
+
+.table.table-striped.under>tbody>tr:nth-child(odd)>td,
+.table.table-striped.under>thead>tr:nth-child(odd)>th {
+  background-color: red;
+} */
 
 .search_box {
 
@@ -188,4 +213,3 @@ table .white {
   max-height: 120px;
   overflow: auto;
 }
-
