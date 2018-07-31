@@ -4,7 +4,7 @@ Cricket Light is a simple rails application using RSolr to display status inform
 RUBY: 2.3.7 ||
 RAILS: 5.1.6
 
-#TO-DO
+##TO-DO
 Query Oracle -> Solr not the other way around
 
 ##How to Install
