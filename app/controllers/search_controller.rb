@@ -23,9 +23,8 @@ class SearchController < ApplicationController
       params= []
       while r = @cursor.fetch
         params = r
-        puts("hahahaha "+params.to_s)
       end
-      puts("hahaha324234ha "+params.to_s)
+      #builds the oracle document
       oci = {:id => document[:id], :title_display => params[0] , :author_display => params[1] , :isbn_display => params[2], :full_publisher_display => params[4]}
       @documents << [document , oci]
     } unless @solr_documents == :query_failed
