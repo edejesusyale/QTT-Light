@@ -11,6 +11,8 @@ class SearchController < ApplicationController
     @documents = []
 
     q = params[:q]
+    @query = q != ""
+    @landing = q.nil?
     @id_list = []
     @invalid_list = []
     @solr_query, @id_list, @invalid_list = query_from_id_list(q)
