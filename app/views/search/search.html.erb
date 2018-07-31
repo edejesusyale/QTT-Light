@@ -39,7 +39,7 @@
     onNavBarResize();
     </script>
 
-    <% if (defined? @solr_query) && @solr_query != '' && @query  %>
+    <% if (defined? @solr_query) && @solr_query != '' && @query && !@landings  %>
       <hr/>
       <h2>Performing Query: </h2>
       <%= @solr_query.nil? ? "No query" : "#{@environment_name}: #{@solr_query} "%>
