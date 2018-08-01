@@ -73,7 +73,7 @@
           <th scope="col">author_display</th>
           <th scope="col">isbn_display</th>
           <th scope="col">full_publisher_display</th>
-          <th scope="col">location_call_number_id_display</th>
+          <!--th scope="col">location_call_number_id_display</th-->
           <th scope="col">Links</th>
         </tr>
         </thead>
@@ -131,7 +131,7 @@
                 </tbody>
               </table>
 
-            <td class="document-valid">
+            <!--td class="document-valid">
               <table class="table table-striped under  <%=color%>">
                 <thead>
                 <tr>
@@ -143,7 +143,7 @@
                 <td><%= document[:full_publisher_display].to_s.tr('[]""','')%></td>
                 <td><%= ocidoc[:full_publisher_display].force_encoding('utf-8').encode unless ocidoc[:full_publisher_display].nil?%></td>
                 </tbody>
-              </table>
+              </table-->
 
 
             <td class="document-valid">
@@ -162,7 +162,7 @@
 
 
             <td>
-              <a class = "Findit btn btn-info"  href="http://search.library.yale.edu/catalog/<%=document[:id].to_s%>?counter=1 ">QS</a>
+              <a class = "Findit btn btn-info"  href="http://search.library.yale.edu/catalog/<%=document[:id].to_s%>?counter=1">QS</a>
             </td>
           </tr>
         <%} unless @solr_query == '' %>

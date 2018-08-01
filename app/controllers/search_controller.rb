@@ -42,6 +42,8 @@ class SearchController < ApplicationController
 
   def index
 
+    @landing =true
+    @query = true
     render 'search'
 
   end

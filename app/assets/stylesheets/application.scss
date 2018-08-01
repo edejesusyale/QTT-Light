@@ -22,8 +22,6 @@ html, body {
   margin: 0; padding: 0; border: 0;
   font-family: "Hiragino Mincho Pro";
   padding-top: 35px;
-  padding-left: 89px;
-  position: absolute;
 }
 
 .nav-bar
@@ -45,10 +43,8 @@ html, body {
     font-size: 2%;
   }
   h1 {
-
     font-size: 4%;
     overflow-wrap: break-spaces;
-    width: 4%;
     padding-bottom: 5%;
   }
   top: 0px;
@@ -110,7 +106,7 @@ textarea {
   background: #fff;
   width: 80%;
   margin: 0 auto;
-  position: relative;
+  position: absolute;
   padding: 0;
   padding-top: 20%;
 }
