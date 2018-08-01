@@ -10,6 +10,7 @@ echo
 echo "[SCRIPT]:Moving and extracting client dependencies"
 sudo ln -s libclntsh.dylib.12.2 libclntsh.dylib
 export OCI_DIR=/opt/oracle/instantclient_12_2
+export DYLD_LIBRARY_PATH=/opt/oracle/instantclient_12_2
 cd $SCRIPT_PATH
 echo
 echo "[SCRIPT]:Bundling"
