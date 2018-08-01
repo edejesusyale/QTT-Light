@@ -134,7 +134,7 @@
                 </tbody>
               </table>
 
-            <!--td class="document-valid">
+              <td class="document-valid">
               <table class="table table-striped under  <%=color%>">
                 <thead>
                 <tr>
@@ -146,11 +146,11 @@
                 <td><%= document[:full_publisher_display].to_s.tr('[]""','')%></td>
                 <td><%= ocidoc[:full_publisher_display].force_encoding('utf-8').encode unless ocidoc[:full_publisher_display].nil?%></td>
                 </tbody>
-              </table-->
+              </table>
 
 
-            <td class="document-valid">
-              <table class="table table-striped under <%=color%>">
+            <!--td class="document-valid">
+              <table-- class="table table-striped under <%=color%>">
                 <thead>
                 <tr>
                   <th scope="col">SOLR</th>
@@ -158,10 +158,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <td><%= document[:lcation_call_number_id_display].to_s.tr('[]""','')%></td>
+                <td><%= document[:location_call_number_id_display].to_s.tr('[]""','')%></td>
                 <td></td>
                 </tbody>
-              </table>
+              </table-->
 
 
             <td>

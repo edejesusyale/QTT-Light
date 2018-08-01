@@ -57,6 +57,8 @@ class SearchController < ApplicationController
       next if !query_component
       if query_component.to_i > 0
         id_list << query_component.to_i
+      elsif  (query_component[0] == 'b' && query_component[1..query_component.length-1].to_i > 0)
+        id_list << query_component
       else
         invalid_list << query_component
       end
