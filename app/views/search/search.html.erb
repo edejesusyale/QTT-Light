@@ -2,25 +2,30 @@
 <div id = "right"></div>
 <div class="container">
   <nav class="nav-bar">
-    <li>
-      <h1><a href="/search/search">QTT</a> <style>a { color: white }</style></h1>
-    </li>
     <%= form_tag("/search/search", method: "post",class: "search_box") do %>
+
+    <ul>
       <li>
-        <div id ="Solr" >
-          <%= label_tag( :solr_1 ,"Production",{}) %>
-          <%= radio_button_tag 'solr', 1, (params[:solr] == '1' || !params[:solr])  , :class => "solr_1"%>
-          <%= label_tag( :solr_2 ,"UAT",{}) %>
-          <%= radio_button_tag 'solr', 2 , params[:solr] == '2', :class => 'solr_2'%>
-          <%= label_tag( :solr_3 ,"Hydratest",{}) %>
-          <%= radio_button_tag 'solr', 3 , params[:solr] == '3', :class => 'solr_3'%>
-        </div>
-      </li>
-      <li>
-        <%= label_tag(:q ,"Search", class: "sr-only" ) %>
-        <%= search_field_tag(:q, params[:q]) %>
-        <%= button_tag("Search", :class=>" btn btn-primary") %>
-      </li>
+      <div class="logo">
+        <span><a href="/search/search">QTT</a> <style>a { color: white }</style></span>
+      </div>
+    </li>
+          <li>
+            <div id ="Solr" >
+              <%= label_tag( :solr_1 ,"Production",{}) %>
+              <%= radio_button_tag 'solr', 1, (params[:solr] == '1' || !params[:solr])  , :class => "solr_1"%>
+              <%= label_tag( :solr_2 ,"UAT",{}) %>
+              <%= radio_button_tag 'solr', 2 , params[:solr] == '2', :class => 'solr_2'%>
+              <%= label_tag( :solr_3 ,"Hydratest",{}) %>
+              <%= radio_button_tag 'solr', 3 , params[:solr] == '3', :class => 'solr_3'%>
+            </div>
+          </li>
+          <li>
+            <%= label_tag(:q ,"Search", class: "sr-only" ) %>
+            <%= search_field_tag(:q, params[:q]) %>
+            <%= button_tag("Search", :class=>" btn btn-primary") %>
+          </li>
+    </ul>
       </nav>
     <% end %>
 
