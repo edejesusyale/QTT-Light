@@ -43,7 +43,7 @@ html, body {
     font-size: 2%;
   }
   h1 {
-    font-size: 4%;
+    font-size: 1.8em;
     overflow-wrap: break-spaces;
     padding-bottom: 5%;
   }
@@ -73,11 +73,22 @@ textarea {
 
   .btn-primary {
     background-color: #9A4D0E;
-    color: black;
+    color: white;
     border-color: black;
   }
 
-}
+  .btn-primary:hover {
+    background-color: #8c460d !important;
+    color: #e6e6e6 !important;
+    border-color: black !important;
+    }
+
+  .btn-primary:active {
+    background-color: #753a0b !important;
+    color: #cccccc !important;
+    border-color: black !important;
+    }
+ }
 
 .nav-bar li{
   float: left;
@@ -86,6 +97,8 @@ textarea {
 .nav-bar li right{
   float: right;
 }
+
+
 #left, #right {
   position: fixed;
   width: 6%;
